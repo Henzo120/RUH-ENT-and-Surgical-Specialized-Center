@@ -1,0 +1,208 @@
+.why-choose-section {
+    padding: 80px 5%;
+    background: #ffffff; /* clean white for trust */
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1300px;
+    margin: 50px auto 0;
+}
+
+.why-card {
+    background: #f9fafb;
+    border-radius: 16px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid #e5e7eb;
+}
+
+.why-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+    border-color: #d1d5db;
+}
+
+.why-icon {
+    font-size: 3.2rem;
+    color: #1e40af;           /* deep blue – professional, trustworthy; change if needed */
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.why-card:hover .why-icon {
+    transform: scale(1.15);   /* gentle grow on hover */
+}
+
+.why-title {
+    font-size: 1.45rem;
+    margin-bottom: 16px;
+    color: #111827;
+    font-weight: 600;
+}
+
+.why-description {
+    color: #4b5563;
+    line-height: 1.65;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 768px) {
+    .why-choose-section {
+        padding: 60px 4%;
+    }
+}
+
+
+
+
+.success-section {
+    padding: 80px 5%;
+    background: #f9fafb;
+}
+
+.cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 50px auto 0;
+}
+
+.case-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.case-images {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #eee;
+}
+
+.image-pair {
+    position: relative;
+    flex: 1;
+}
+
+.before-img, .after-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.label {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.case-title {
+    font-size: 1.35rem;
+    margin: 20px 20px 10px;
+    text-align: center;
+}
+
+.case-desc {
+    padding: 0 20px 25px;
+    color: #555;
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.disclaimer {
+    text-align: center;
+    font-size: 0.95rem;
+    color: #666;
+    margin: 20px auto 40px;
+    max-width: 900px;
+    padding: 15px;
+    background: #f0f4f8;
+    border-radius: 8px;
+}
+
+
+
+
+
+.faq-section {
+    padding: 80px 5%;
+    background: white;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 10px;
+}
+
+.faq-question {
+    padding: 20px 25px;
+    background: #f9fafb;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.15rem;
+    color: #1e40af;           /* Main blue for questions – professional & trustworthy */
+    transition: background 0.3s, color 0.3s;
+}
+
+.faq-question:hover {
+    background: #eff6ff;       /* Very light blue hover */
+    color: #1e3a8a;           /* Slightly darker blue on hover */
+}
+
+.faq-toggle {
+    font-size: 1.8rem;
+    color: #3b82f6;           /* Bright blue for the + icon */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(45deg);
+    color: #1e40af;           /* Same blue as question when open */
+}
+
+.faq-answer {
+    padding: 0 25px 20px;
+    display: none;
+    line-height: 1.7;
+    color: #2563eb;           /* Blue-ish tone for answers – clear but not too intense */
+    font-size: 1.03rem;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Optional: Make first letter or keywords stand out more (modern touch) */
+.faq-answer strong {
+    color: #1e40af;
+    font-weight: 600;
+}

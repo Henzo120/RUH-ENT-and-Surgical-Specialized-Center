@@ -1,0 +1,277 @@
+/* About Section – Modern + Animated Entrance */
+
+.about-section {
+  padding: 50px 0 60px;
+  background: white;
+}
+
+/* Title */
+.section-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  color: #003366;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.title-underline {
+  width: 70px;
+  height: 3px;
+  background: #00cc66;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* Main container */
+.about-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  align-items: start;
+}
+
+/* Remove unwanted spacing */
+.about-left,
+.about-right {
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+/* Left side – starts from left */
+.about-left {
+  text-align: left;
+  transform: translateX(-60px); /* starts off-screen left */
+}
+
+.about-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Right side – starts from right */
+.about-right {
+  transform: translateX(60px); /* starts off-screen right */
+}
+
+.about-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Image */
+.dr-image {
+  width: 100%;
+  max-width: 380px;
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+/* Doctor Info */
+.dr-info h3 {
+  font-size: 1.4rem;
+  color: #003366;
+  margin-bottom: 0.1rem;
+  margin-left: 25%;
+}
+
+.dr-info .dr-title {
+  font-size: 0.95rem;
+  color: #00cc66;
+  font-weight: 600;
+  margin-left: 20%;
+}
+
+/* Right side content */
+.about-right {
+  padding: 0;
+  margin-left: -25%;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  text-align: justify;
+  color: #444;
+  margin-bottom: 0.8rem;
+}
+
+.read-more-btn {
+  display: inline-block;
+  background: #00cc66;
+  color: white;
+  padding: 0.45rem 1.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.25s;
+}
+
+.read-more-btn:hover {
+  background: #00b359;
+  transform: translateY(-2px);
+}
+
+/* Counters – smaller + horizontal */
+.counters-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.3rem;
+}
+
+.counter-item {
+  flex: 0 0 auto;
+  min-width: 90px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.counter-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.counter-number {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #00cc66;
+  line-height: 1;
+  margin-bottom: 0.15rem;
+}
+
+.counter-label {
+  font-size: 0.78rem;
+  color: #555;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Mobile & Tablet */
+@media (max-width: 992px) {
+  .about-section {
+    padding: 40px 5% 50px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-left,
+  .about-right {
+    transform: translateY(40px); /* mobile: slide up from bottom */
+  }
+
+  .dr-image {
+    max-width: 320px;
+    max-height: 300px;
+    margin: 0 auto 0.8rem;
+  }
+
+  .dr-info {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .dr-info h3,
+  .dr-info .dr-title {
+    margin-left: 0 !important;
+  }
+
+  .about-right {
+    margin-left: 0 !important;
+  }
+
+  .about-text {
+    font-size: 1.02rem;
+  }
+
+  .read-more-btn {
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto 1.2rem;
+    display: block;
+    text-align: center;
+    padding: 0.6rem 1.4rem;
+  }
+
+  .counters-grid {
+    gap: 14px;
+    justify-content: space-between;
+  }
+
+  .counter-item {
+    min-width: 80px;
+  }
+
+  .counter-number {
+    font-size: 1.65rem;
+  }
+
+  .counter-label {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    padding: 35px 6% 45px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+  }
+
+  .dr-image {
+    max-width: 280px;
+    max-height: 260px;
+  }
+
+  .about-text {
+    font-size: 0.99rem;
+  }
+
+  .read-more-btn {
+    max-width: 100%;
+    padding: 0.65rem;
+  }
+
+  .counters-grid {
+    gap: 10px;
+  }
+
+  .counter-item {
+    min-width: 70px;
+  }
+
+  .counter-number {
+    font-size: 1.55rem;
+  }
+
+  .counter-label {
+    font-size: 0.72rem;
+  }
+}

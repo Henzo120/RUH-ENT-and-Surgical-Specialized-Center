@@ -1,0 +1,231 @@
+/* Modern Contact Us - Gray Text + Green Underline */
+
+.contact-section {
+  padding: 5rem 0 0;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #003366;
+  margin-bottom: 0.8rem;
+}
+
+.green-underline {
+  width: 100px;
+  height: 5px;
+  background-color: #00cc66;
+  margin: 0 auto 1rem;
+  border-radius: 3px;
+}
+
+.section-desc {
+  font-size: 1.15rem;
+  color: #4b5563; /* gray */
+  line-height: 1.6;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 4rem;
+}
+
+@media (min-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-details {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item i {
+  font-size: 1.8rem;
+  color: #00cc66;
+  margin-top: 0.3rem;
+}
+
+.detail-item p,
+.detail-item a {
+  font-size: 1.05rem;
+  color: #4b5563; /* gray */
+  line-height: 1.6;
+}
+
+.detail-item strong {
+  color: #1f2937; /* darker gray for emphasis */
+}
+
+.social-media {
+  margin-top: 2rem;
+}
+
+.social-media h4 {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: #00cc66;
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,204,102,0.25);
+}
+
+.contact-form {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid #e5e7eb;
+}
+
+.contact-form h3 {
+  font-size: 1.6rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 500;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  background: #f9fafb;
+  color: #4b5563;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00cc66;
+  box-shadow: 0 0 0 4px rgba(0,204,102,0.12);
+  background: white;
+}
+
+.contact-form button {
+  width: 100%;
+  background: #00cc66;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #00b359;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,204,102,0.25);
+}
+
+.contact-map {
+  margin-top: 3rem;
+}
+
+.contact-map iframe {
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact-section { padding: 4rem 0 0; }
+  .section-header h2 { font-size: 2.2rem; }
+  .contact-container { padding: 0 1rem 3rem; }
+  .map-embed iframe { height: 320px; }
+}
+/* Force black text in left column (contact-details) */
+.contact-details,
+.contact-details strong,
+.contact-details a,
+.contact-details p,
+.social-media h4 {
+  color: #000000 !important;
+}
+
+/* Links inside black text stay visible (blue default) */
+.contact-details a {
+  color: #2563eb; /* nice blue link color */
+  text-decoration: underline;
+}
+
+.contact-details a:hover {
+  color: #00cc66;
+}
+
+/* Green underline under title */
+.green-underline {
+  width: 100px;
+  height: 5px;
+  background-color: #00cc66;
+  margin: 0.5rem auto 1rem;
+  border-radius: 3px;
+}
+
+/* Optional: make icons pop more against black text */
+.detail-item i {
+  color: #00cc66 !important;
+  font-size: 1.8rem;
+}

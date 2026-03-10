@@ -1,0 +1,100 @@
+/* --- Accreditations --- */
+.accreditations-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+.accreditation-card img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s;
+}
+.accreditation-card:hover img {
+    transform: scale(1.1);
+}
+
+/* --- Partners Slider --- */
+.partners-slider {
+    overflow: hidden;
+    padding: 1rem 5%;
+}
+.partners-track {
+    display: flex;
+    gap: 2rem;
+    animation: slide 20s linear infinite;
+}
+.partner-card {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    width: 150px;
+}
+.partner-card img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+}
+.partner-card span {
+    font-size: 0.9rem;
+    text-align: center;
+}
+.partners-slider:hover .partners-track {
+    animation-play-state: paused;
+}
+
+/* --- Animation --- */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Responsive for Small Screens --- */
+@media (max-width: 768px) {
+    /* Accreditations stack horizontally scrollable */
+    .accreditations-container {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1rem;
+    }
+    .accreditations-container::-webkit-scrollbar {
+        height: 6px;
+    }
+    .accreditations-container::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 3px;
+    }
+
+    /* Partners slider smaller width */
+    .partner-card {
+        width: 120px;
+    }
+
+    /* Slide slower on small screens */
+    .partners-track {
+        gap: 1rem;
+        animation-duration: 30s;
+    }
+}
+
+/* Extra small screens (mobile portrait) */
+@media (max-width: 480px) {
+    .accreditation-card img {
+        width: 90px;
+    }
+    .partner-card {
+        width: 90px;
+    }
+    .partner-card img {
+        width: 70px;
+    }
+    .partner-card span {
+        font-size: 0.75rem;
+    }
+}

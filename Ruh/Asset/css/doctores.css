@@ -1,0 +1,130 @@
+.doctors-section {
+    padding: 50px 5% 70px;
+    background: white;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 2.1rem;
+    color: #003366;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  .title-underline {
+    width: 80px;
+    height: 4px;
+    background: #00cc66;
+    margin: 0 auto;
+  }
+
+  .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 in one line on large screens */
+    gap: 18px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .doctor-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: transform 0.2s;
+    text-align: center;
+  }
+
+  .doctor-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .doctor-photo img {
+    width: 100%;
+    height: 140px;          /* small photo size */
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .doctor-info {
+    padding: 0.9rem 0.7rem;
+  }
+
+  .doctor-name {
+    font-size: 1.05rem;
+    color: #003366;
+    margin: 0.3rem 0;
+    font-weight: 600;
+  }
+
+  .doctor-title {
+    font-size: 0.82rem;
+    color: #00cc66;
+    margin: 0.2rem 0;
+    line-height: 1.2;
+  }
+
+  .doctor-exp {
+    font-size: 0.78rem;
+    color: #777;
+    margin: 0.3rem 0 0.6rem;
+  }
+
+  .doctor-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 0.5rem;
+  }
+
+  .social-link {
+    color: #555;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .social-link:hover {
+    color: #00cc66;
+  }
+
+  /* Responsive – drop columns gradually */
+  @media (max-width: 1200px) {
+    .doctors-grid { grid-template-columns: repeat(5, 1fr); }
+  }
+
+  @media (max-width: 992px) {
+    .doctors-grid { grid-template-columns: repeat(4, 1fr); }
+    .doctor-photo img { height: 130px; }
+    .doctor-name { font-size: 1rem; }
+    .doctor-title { font-size: 0.8rem; }
+  }
+
+  @media (max-width: 768px) {
+    .doctors-grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .doctor-photo img { height: 120px; }
+  }
+
+  @media (max-width: 500px) {
+    .doctors-grid { grid-template-columns: repeat(2, 1fr); }
+    .doctor-photo img { height: 110px; }
+    .doctor-name { font-size: 0.95rem; }
+  }
+
+  @media (max-width: 380px) {
+    .doctors-grid { grid-template-columns: 1fr; }
+  }
+  /* Doctors Section Animations */
+.doctor-card {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.doctor-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
