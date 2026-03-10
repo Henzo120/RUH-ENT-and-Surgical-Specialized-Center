@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><?php echo $hospital_name; ?> Home page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" type="image/png" href="./Asset/img/logo/Logo.jpg">
+    <link rel="stylesheet" href="./Asset/css/hero-header.css">
+    <link rel="stylesheet" href="./Asset/css/about.css">
+    <link rel="stylesheet" href="./Asset/css/Servicess.css">
+    <link rel="stylesheet" href="./Asset/css/doctores.css">
+    <link rel="stylesheet" href="./Asset/css/doctores.css">
+    <link rel="stylesheet" href="./Asset/css/technology.css">
+    <link rel="stylesheet" href="./Asset/css/choose.css">
+    <link rel="stylesheet" href="./Asset/css/Stories.css">
+    <link rel="stylesheet" href="./Asset/css/partner.css">
+    <link rel="stylesheet" href="./Asset/css/Contact-us.css">
+    <link rel="stylesheet" href="./Asset/css/Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        /* Hamburger visibility control */
+        .hamburger {
+            display: none !important;
+        }
+
+        @media (max-width: 992px) {
+            .hamburger {
+                display: block !important;
+                font-size: 1.8rem;
+                cursor: pointer;
+                color: inherit;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+
+    <!-- Header -->
+    <header class="transparent" id="main-header">
+        <a href="index.php" class="logo">
+            <img src="./Asset/img/logo/ruh.png" alt="Logo">
+        </a>
+
+        <div class="nav-desktop">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Doctors</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <!-- Right side clickable contact info -->
+        <div class="header-info">
+            <a href="tel:+251911223344" class="contact-link">
+                <i class="fas fa-phone-alt"></i> +251 911 223 344
+            </a>
+            |
+            <a href="mailto:info@ruhent.com" class="contact-link">
+                <i class="fas fa-envelope"></i> info@ruhent.com
+            </a>
+        </div>
+
+        <i class="fas fa-bars hamburger" id="hamburger"></i>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <i class="fas fa-times close-btn" id="closeMenu"></i>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Doctors</a>
+        <a href="#">Contact</a>
+    </div>
+    <!-- Right Floating Social Sidebar -->
+    <div class="social-sidebar">
+        <a href="https://facebook.com/hawassaheadhospital" target="_blank" class="sidebar-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/251911234567" target="_blank" class="sidebar-icon whatsapp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://instagram.com/hawassaheadhospital" target="_blank" class="sidebar-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://t.me/hawassaheadhospital" target="_blank" class="sidebar-icon telegram">
+            <i class="fab fa-telegram-plane"></i>
+        </a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="slideshow">
+            <div class="slide active" style="background-image: url('./Asset/img/slide/slide4.JPG');"></div>
+            <div class="slide" style="background-image: url('./Asset/img/slide/slide3.JPG');"></div>
+            <div class="slide" style="background-image: url('./Asset/img/slide/slide4.JPG');"></div>
+            <div class="slide" style="background-image: url('./Asset/img/slide/slide3.JPG');"></div>
+        </div>
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h2 class="hero-title"><?php echo $hero['h2']; ?></h2>
+            <p class="hero-paragraph"><?php echo $hero['paragraph']; ?></p>
+
+            <div class="counters">
+                <?php foreach ($hero['counters'] as $c): ?>
+                    <div class="counter">
+                        <div class="counter-number" data-target="<?php echo $c['value']; ?>">0+</div>
+                        <p><?php echo $c['label']; ?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="about-section" id="about">
+        <div class="section-header">
+            <h2 class="section-title">About</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="about-container">
+            <div class="about-left about-animated">
+                <img src="<?php echo $about['dr_image']; ?>" alt="<?php echo $about['dr_name']; ?>" class="dr-image">
+
+                <div class="dr-info">
+                    <h3><?php echo $about['dr_name']; ?></h3>
+                    <div class="dr-title"><?php echo $about['dr_title']; ?></div>
+                </div>
+            </div>
+
+            <div class="about-right about-animated">
+                <p class="about-text"><?php echo $about['paragraph']; ?></p>
+
+                <a href="<?php echo $about['read_more_link']; ?>" class="read-more-btn">Read More</a>
+
+                <div class="counters-grid">
+                    <?php foreach ($about['counters'] as $index => $counter): ?>
+                        <div class="counter-item about-animated" style="animation-delay: <?php echo 0.6 + $index * 0.2; ?>s;">
+                            <div class="counter-number" data-target="<?php echo $counter['number']; ?>">0+</div>
+                            <p class="counter-label"><?php echo $counter['label']; ?></p>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="services-container">
+            <?php foreach ($services as $service): ?>
+                <div class="service-item <?= $service['side'] === 'right' ? 'reverse' : '' ?>">
+                    <div class="service-image">
+                        <img src="<?= $service['image'] ?>" alt="<?= $service['title'] ?>" loading="lazy">
+                    </div>
+
+                    <div class="service-content">
+                        <h3 class="service-title"><?= $service['title'] ?></h3>
+                        <p class="service-desc"><?= $service['description'] ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="doctors-section">
+        <div class="section-header">
+            <h2 class="section-title">Our Specialists</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="doctors-grid"> <?php foreach ($doctors as $doctor): ?> <div class="doctor-card">
+                    <div class="doctor-photo"> <img src="<?= $doctor['photo'] ?>" alt="<?= $doctor['name'] ?>"> </div>
+                    <div class="doctor-info">
+                        <h3 class="doctor-name"><?= $doctor['name'] ?></h3>
+                        <p class="doctor-title"><?= $doctor['title'] ?></p>
+                        <p class="doctor-exp"><?= $doctor['experience'] ?></p>
+                        <div class="doctor-social"> <a href="<?= $doctor['instagram'] ?>" target="_blank" class="social-link"> <i class="fab fa-instagram"></i> </a> <a href="<?= $doctor['linkedin'] ?>" target="_blank" class="social-link"> <i class="fab fa-linkedin-in"></i> </a> </div>
+                    </div>
+                </div> <?php endforeach; ?> </div>
+    </section>
+    <!-- Technology / Advanced Equipment Section -->
+    <section class="technology-section" id="technology">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Our Technology</h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle"><?php echo $technology['subtitle']; ?></p>
+        </div>
+
+        <div class="technology-grid">
+            <?php foreach ($technology['items'] as $index => $tech): ?>
+                <div class="tech-card"
+                    data-aos="fade-up"
+                    data-aos-delay="<?php echo $index * 100; ?>" <!-- stagger: 0ms, 100ms, 200ms, ... -->
+                    data-aos-duration="700">
+
+                    <div class="tech-image-container">
+                        <img src="<?php echo $tech['image']; ?>"
+                            alt="<?php echo $tech['title']; ?>"
+                            class="tech-image"
+                            loading="lazy">
+                    </div>
+
+                    <div class="tech-overlay">
+                        <h3 class="tech-title"><?php echo $tech['title']; ?></h3>
+                        <p class="tech-description"><?php echo $tech['description']; ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-section" id="why-choose">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title"><?php echo $why_choose_us['title']; ?></h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle"><?php echo $why_choose_us['subtitle']; ?></p>
+        </div>
+
+        <div class="why-grid">
+            <?php foreach ($why_choose_us['items'] as $index => $item): ?>
+                <div class="why-card"
+                    data-aos="fade-up"
+                    data-aos-delay="<?php echo $index * 100; ?>"
+                    data-aos-duration="700">
+
+                    <div class="why-icon">
+                        <i class="fas <?php echo $item['icon']; ?>"></i>
+                    </div>
+
+                    <h3 class="why-title"><?php echo $item['title']; ?></h3>
+
+                    <p class="why-description"><?php echo $item['description']; ?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <!-- Patient Stories Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="header-text">
+                <h2 class="section-title">Patient Stories</h2>
+                <div class="title-line"></div>
+                <p class="section-subtitle">Hear from people we’ve helped</p>
+            </div>
+
+            <div class="grid-container">
+                <?php foreach ($testimonials as $testimonial): ?>
+                    <div class="testimonial-card">
+                        <div class="card-header">
+                            <img
+                                src="<?= $testimonial['avatar'] ?>"
+                                alt="<?= $testimonial['name'] ?>"
+                                class="avatar" />
+                            <div class="author-info">
+                                <div class="author-name"><?= $testimonial['name'] ?></div>
+                                <div class="author-title"><?= $testimonial['title'] ?></div>
+                            </div>
+                        </div>
+
+                        <p class="review-text">
+                            "<?= $testimonial['review'] ?>"
+                        </p>
+
+                        <div class="social-links">
+                            <a href="<?= $testimonial['instagram'] ?>" target="_blank" class="social-icon">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="<?= $testimonial['linkedin'] ?>" target="_blank" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <!-- Success Cases / Before-After Section -->
+    <section class="success-section" id="success-cases">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title"><?php echo $success_cases['title']; ?></h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle"><?php echo $success_cases['subtitle']; ?></p>
+        </div>
+
+        <div class="disclaimer">
+            <strong>Important:</strong> All before-and-after images shown are from patients who have given explicit written consent for their use on this website for educational purposes. Results vary by individual. These are not guarantees of similar outcomes.
+        </div>
+
+        <div class="cases-grid">
+            <?php foreach ($success_cases['cases'] as $index => $case): ?>
+                <div class="case-card"
+                    data-aos="fade-up"
+                    data-aos-delay="<?php echo $index * 150; ?>">
+
+                    <div class="case-images">
+                        <div class="image-pair">
+                            <img src="<?php echo $case['before']; ?>" alt="Before - <?php echo $case['title']; ?>" class="before-img" loading="lazy">
+                            <span class="label">Before</span>
+                        </div>
+                        <div class="image-pair">
+                            <img src="<?php echo $case['after']; ?>" alt="After - <?php echo $case['title']; ?>" class="after-img" loading="lazy">
+                            <span class="label">After</span>
+                        </div>
+                    </div>
+
+                    <h3 class="case-title"><?php echo $case['title']; ?></h3>
+                    <p class="case-desc"><?php echo $case['desc']; ?></p>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <!-- Accreditations Section -->
+    <section class="accreditations-section">
+        <div class="section-header">
+            <h2 class="section-title">Accreditations</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="accreditations-container">
+            <?php foreach ($accreditations as $acc): ?>
+                <a href="<?= $acc['link'] ?>" target="_blank" class="accreditation-card">
+                    <img src="<?= $acc['logo'] ?>" alt="<?= $acc['name'] ?>">
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <!-- FAQ Accordion Section -->
+    <section class="faq-section" id="faq">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title"><?php echo $faq['title']; ?></h2>
+            <div class="title-underline"></div>
+            <p class="section-subtitle"><?php echo $faq['subtitle']; ?></p>
+        </div>
+
+        <div class="faq-container" data-aos="fade-up" data-aos-delay="200">
+            <?php foreach ($faq['questions'] as $index => $item): ?>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <?php echo $item['q']; ?>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <?php echo $item['a']; ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </section>
+    <!-- Global Partners Section -->
+    <section class="partners-section">
+        <div class="section-header">
+            <h2 class="section-title">Global Partners</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="partners-slider">
+            <div class="partners-track">
+                <?php foreach ($partners as $partner): ?>
+                    <a href="<?= $partner['link'] ?>" target="_blank" class="partner-card">
+                        <img src="<?= $partner['logo'] ?>" alt="<?= $partner['name'] ?>">
+                        <span><?= $partner['name'] ?></span>
+                    </a>
+                <?php endforeach; ?>
+                <!-- Repeat for infinite slide -->
+                <?php foreach ($partners as $partner): ?>
+                    <a href="<?= $partner['link'] ?>" target="_blank" class="partner-card">
+                        <img src="<?= $partner['logo'] ?>" alt="<?= $partner['name'] ?>">
+                        <span><?= $partner['name'] ?></span>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <!-- Contact  Section -->
+    <section class="contact-section" id="Contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="green-underline"></div>
+            <p class="section-desc">For medical inquiries, appointments, emergencies, or general information — our team is ready to assist you.</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div style="color: #000000;">
+                        <strong>Address:</strong><br>
+                        <?= $contact['address'] ?>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div style="color: #000000;">
+                        <strong>Main Line:</strong> <a href="tel:<?= str_replace(' ', '', $contact['phone_main']) ?>"><?= $contact['phone_main'] ?></a><br>
+                        <strong>Emergency:</strong> <a href="tel:<?= str_replace(' ', '', $contact['phone_emerg']) ?>"><?= $contact['phone_emerg'] ?></a>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div style="color: #000000;">
+                        <strong>WhatsApp:</strong> <a href="<?= $contact['social']['whatsapp'] ?>" target="_blank"><?= $contact['whatsapp'] ?></a>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <div style="color: #000000;">
+                        <strong>Email:</strong> <a href="mailto:<?= $contact['email'] ?>"><?= $contact['email'] ?></a>
+                    </div>
+                </div>
+
+                <div class="detail-item hours-item">
+                    <i class="fas fa-clock"></i>
+                    <div style="color: #000000;">
+                        <strong>Working Hours:</strong><br>
+                        <?= $contact['hours'] ?>
+                    </div>
+                </div>
+
+                <div class="detail-item directions-item">
+                    <i class="fas fa-directions"></i>
+                    <div style="color: #000000;">
+                        <strong>Directions / Parking:</strong><br>
+                        <?= $contact['directions'] ?>
+                    </div>
+                </div>
+
+                <!-- Social Media -->
+                <div class="social-media">
+                    <h4 style="color: #000000;">Follow & Message Us</h4>
+                    <div class="social-links">
+                        <?php foreach ($contact['social'] as $platform => $link): ?>
+                            <?php if (!empty($link)): ?>
+                                <a href="<?= $link ?>" target="_blank" class="social-btn <?= $platform ?>">
+                                    <i class="fab fa-<?= $platform === 'whatsapp' ? 'whatsapp' : ($platform === 'telegram' ? 'telegram-plane' : $platform) ?>"></i>
+                                </a>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" method="post" action="send-inquiry.php">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Number" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="e.g. Appointment Inquiry" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" placeholder="How can we assist you today?" rows="6" required></textarea>
+                    </div>
+
+                    <button type="submit" id="submitBtn">Send Message</button>
+                </form>
+
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </div>
+
+        <!-- Google Map -->
+        <div class="contact-map">
+            <iframe
+                src="<?= $contact['map_embed'] ?>"
+                width="100%"
+                height="400"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Fotter  Section -->
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <!-- Column 1: Logo & Tagline -->
+            <div class="footer-brand">
+                <img src="<?= $footer['logo'] ?>" alt="<?= $footer['name'] ?>" class="footer-logo">
+                <h3 class="footer-name"><?= $footer['name'] ?></h3>
+                <p class="footer-tagline"><?= $footer['tagline'] ?></p>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <?php foreach ($footer['quick_links'] as $label => $url): ?>
+                        <li><a href="<?= $url ?>"><?= $label ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p class="address"><i class="fas fa-map-marker-alt"></i> <?= $footer['address'] ?></p>
+                <p><i class="fas fa-phone-alt"></i> Main: <?= $footer['phone_main'] ?></p>
+                <p><i class="fas fa-exclamation-triangle"></i> Emergency: <?= $footer['phone_emerg'] ?></p>
+                <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="<?= $footer['social']['whatsapp'] ?>" target="_blank"><?= $footer['whatsapp'] ?></a></p>
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:<?= $footer['email'] ?>"><?= $footer['email'] ?></a></p>
+            </div>
+
+            <!-- Column 4: Social Media -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <?php foreach ($footer['social'] as $platform => $link): ?>
+                        <?php if (!empty($link)): ?>
+                            <a href="<?= $link ?>" target="_blank" class="social-icon <?= $platform ?>">
+                                <i class="fab fa-<?= $platform === 'whatsapp' ? 'whatsapp' : ($platform === 'telegram' ? 'telegram-plane' : $platform) ?>"></i>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright & Developed - now directly attached, no separation -->
+        <div class="footer-bottom">
+            <p>© <?= date("Y") ?> <?= $footer['name'] ?>. All Rights Reserved.</p>
+
+        </div>
+    </footer>
+    </footer>
+
+    <script src="./Asset/js/hero.js"></script>
+    <script src="./Asset/js/hero.js"></script>
+    <script src="./Asset/js/about-animation.js"></script>
+    <script src="./Asset/js/servicese.js"></script>
+    <script src="./Asset/js/Doctores.js"></script>
+    <script src="./Asset/js/stories.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, // animation duration in ms
+            once: true, // animate only once
+            easing: 'ease-out', // smooth feel
+            offset: 120 // start animation 120px before element enters view
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
